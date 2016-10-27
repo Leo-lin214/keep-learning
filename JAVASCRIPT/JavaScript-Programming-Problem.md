@@ -259,3 +259,38 @@ oNode1 和 oNode2 在同一个文档中, 且不会为相同的节点 ;
         return reg.test(email);
     }
 ```
+
+### **Question 8: 字符串字符统计**
+
+题目描述: 
+
+统计字符串中每个字符的出现频率, 返回一个 Object, 其中 Key 为统计字符, value
+为出现频率: 
+
+ - 不限制 Key 的顺序 ; 
+ - 输入的字符串参数不会为空 ;
+ - 忽略空白字符 ;
+
+输入例子: 
+
+```javascript
+    count("Hello World") ;
+```
+
+输出例子: 
+
+```javascript
+    {h: 1, e: 1, l: 3, o: 2, w: 1, r: 1, d: 1} ;
+```
+
+答案: 
+
+```javascript
+    function count(str){
+      var obj = {};
+      str.replace(/\S/g, function(items){       // \S匹配任何非空字符
+        !obj[items] ? obj[items] = 1 : obj[items]++;
+      });
+      return obj;
+    }
+```

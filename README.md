@@ -1,4 +1,4 @@
-# FE Knowledge Summary(To Be Continue)
+﻿# FE Knowledge Summary(To Be Continue)
 
 前端知识总结
 
@@ -27,17 +27,5 @@
 
  - [1. Others](https://github.com/Andraw-lin/FE-Knowledge-Summary/blob/master/OTHERS%2FOthers.md)
 
-
-## Extra
-
- - [1. About HTML](https://github.com/Andraw-lin/FE-Knowledge-Summary/blob/master/HTML/About-HTML.md)
-
- - [2. About CSS](https://github.com/Andraw-lin/FE-Knowledge-Summary/blob/master/CSS/About-CSS.md)
-
- - [3. About Javascript](https://github.com/Andraw-lin/FE-Knowledge-Summary/blob/master/JAVASCRIPT/About-Javascript.md)
-
- - [4. About Network](https://github.com/Andraw-lin/FE-Knowledge-Summary/blob/master/NETWORK/About-Network.md)
-
- - [5. About Others](https://github.com/Andraw-lin/FE-Knowledge-Summary/blob/master/OTHERS%2FAbout-Others.md)
 
  

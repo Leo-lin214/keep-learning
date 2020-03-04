@@ -20,6 +20,6 @@ git commit -m 'deploy'
 # sudo git push -f git@github.com:Andraw-lin/Andraw-lin.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/Andraw-lin/keep-Running.git master:gh-pages
+git push -f https://github.com/Andraw-lin/keep-Learning.git master:gh-pages
 
 cd -

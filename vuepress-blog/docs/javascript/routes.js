@@ -4,6 +4,7 @@ function getJavaScriptRoutes() {
       title: 'JavaScript 学习和总结',
       path: '/javascript/javascript-learning-and-summary', // 必须为绝对路径
       children: [
+        ['/javascript/javascript-learning-and-summary/你搞懂正则了吗', '你搞懂正则了吗'],
         ['/javascript/javascript-learning-and-summary/如何优雅地改善程序中for循环', '如何优雅地改善程序中for循环'],
         ['/javascript/javascript-learning-and-summary/单点登录的思考', '单点登录(SSO)的思考'],
         ['/javascript/javascript-learning-and-summary/你对同构了解多少', '你对同构了解多少'],

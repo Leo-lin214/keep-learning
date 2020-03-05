@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>先聊聊观察者模式 | Learing And Sharing</title>
+    <meta name="description" content="好好学习，天天向上💪">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/keep-Learning/assets/css/0.styles.69d11f16.css" as="style"><link rel="preload" href="/keep-Learning/assets/js/app.90ccec97.js" as="script"><link rel="preload" href="/keep-Learning/assets/js/2.71580b53.js" as="script"><link rel="preload" href="/keep-Learning/assets/js/95.7e23aad8.js" as="script"><link rel="prefetch" href="/keep-Learning/assets/js/10.99f30dcf.js"><link rel="prefetch" href="/keep-Learning/assets/js/100.53100d9a.js"><link rel="prefetch" href="/keep-Learning/assets/js/101.02f72051.js"><link rel="prefetch" href="/keep-Learning/assets/js/102.60bb996e.js"><link rel="prefetch" href="/keep-Learning/assets/js/103.c7f3df5b.js"><link rel="prefetch" href="/keep-Learning/assets/js/104.e8378220.js"><link rel="prefetch" href="/keep-Learning/assets/js/105.90235e89.js"><link rel="prefetch" href="/keep-Learning/assets/js/106.f4905ea3.js"><link rel="prefetch" href="/keep-Learning/assets/js/107.02dfbd1b.js"><link rel="prefetch" href="/keep-Learning/assets/js/108.e4ffed8c.js"><link rel="prefetch" href="/keep-Learning/assets/js/109.2f6191db.js"><link rel="prefetch" href="/keep-Learning/assets/js/11.ccfc084d.js"><link rel="prefetch" href="/keep-Learning/assets/js/110.05776fb6.js"><link rel="prefetch" href="/keep-Learning/assets/js/111.b05f070d.js"><link rel="prefetch" href="/keep-Learning/assets/js/112.e07a4e74.js"><link rel="prefetch" href="/keep-Learning/assets/js/113.71af1d2b.js"><link rel="prefetch" href="/keep-Learning/assets/js/114.914195f4.js"><link rel="prefetch" href="/keep-Learning/assets/js/115.3a0e92aa.js"><link rel="prefetch" href="/keep-Learning/assets/js/116.4ab80baa.js"><link rel="prefetch" href="/keep-Learning/assets/js/12.5bee8056.js"><link rel="prefetch" href="/keep-Learning/assets/js/13.05de0df0.js"><link rel="prefetch" href="/keep-Learning/assets/js/14.d86b4a20.js"><link rel="prefetch" href="/keep-Learning/assets/js/15.887efa99.js"><link rel="prefetch" href="/keep-Learning/assets/js/16.f7c7fa8d.js"><link rel="prefetch" href="/keep-Learning/assets/js/17.dbf7a65f.js"><link rel="prefetch" href="/keep-Learning/assets/js/18.e57690bf.js"><link rel="prefetch" href="/keep-Learning/assets/js/19.7486ada7.js"><link rel="prefetch" href="/keep-Learning/assets/js/20.d9250e4c.js"><link rel="prefetch" href="/keep-Learning/assets/js/21.71046546.js"><link rel="prefetch" href="/keep-Learning/assets/js/22.5d1bafeb.js"><link rel="prefetch" href="/keep-Learning/assets/js/23.06f0e746.js"><link rel="prefetch" href="/keep-Learning/assets/js/24.2d27300f.js"><link rel="prefetch" href="/keep-Learning/assets/js/25.08ee3872.js"><link rel="prefetch" href="/keep-Learning/assets/js/26.b747bff1.js"><link rel="prefetch" href="/keep-Learning/assets/js/27.895e5c28.js"><link rel="prefetch" href="/keep-Learning/assets/js/28.8674bd28.js"><link rel="prefetch" href="/keep-Learning/assets/js/29.00b3c0e2.js"><link rel="prefetch" href="/keep-Learning/assets/js/3.227fd7b0.js"><link rel="prefetch" href="/keep-Learning/assets/js/30.7c8a2e90.js"><link rel="prefetch" href="/keep-Learning/assets/js/31.4e94fa86.js"><link rel="prefetch" href="/keep-Learning/assets/js/32.24db43de.js"><link rel="prefetch" href="/keep-Learning/assets/js/33.3a9d7c5b.js"><link rel="prefetch" href="/keep-Learning/assets/js/34.455ff1fa.js"><link rel="prefetch" href="/keep-Learning/assets/js/35.bf04ef16.js"><link rel="prefetch" href="/keep-Learning/assets/js/36.f733bfb6.js"><link rel="prefetch" href="/keep-Learning/assets/js/37.507ec8ee.js"><link rel="prefetch" href="/keep-Learning/assets/js/38.4c8024fc.js"><link rel="prefetch" href="/keep-Learning/assets/js/39.e5094649.js"><link rel="prefetch" href="/keep-Learning/assets/js/4.c62e84b3.js"><link rel="prefetch" href="/keep-Learning/assets/js/40.6dd7a473.js"><link rel="prefetch" href="/keep-Learning/assets/js/41.14db9a5d.js"><link rel="prefetch" href="/keep-Learning/assets/js/42.342c49d2.js"><link rel="prefetch" href="/keep-Learning/assets/js/43.e2f02df0.js"><link rel="prefetch" href="/keep-Learning/assets/js/44.85c43572.js"><link rel="prefetch" href="/keep-Learning/assets/js/45.2d71b584.js"><link rel="prefetch" href="/keep-Learning/assets/js/46.26841be2.js"><link rel="prefetch" href="/keep-Learning/assets/js/47.2be49ff6.js"><link rel="prefetch" href="/keep-Learning/assets/js/48.b0982983.js"><link rel="prefetch" href="/keep-Learning/assets/js/49.0160ec63.js"><link rel="prefetch" href="/keep-Learning/assets/js/5.c9cb8de9.js"><link rel="prefetch" href="/keep-Learning/assets/js/50.d1a3af12.js"><link rel="prefetch" href="/keep-Learning/assets/js/51.a655886f.js"><link rel="prefetch" href="/keep-Learning/assets/js/52.93851e74.js"><link rel="prefetch" href="/keep-Learning/assets/js/53.c8009c28.js"><link rel="prefetch" href="/keep-Learning/assets/js/54.7945804f.js"><link rel="prefetch" href="/keep-Learning/assets/js/55.0d1b82a0.js"><link rel="prefetch" href="/keep-Learning/assets/js/56.ea4f3968.js"><link rel="prefetch" href="/keep-Learning/assets/js/57.c7fe55e7.js"><link rel="prefetch" href="/keep-Learning/assets/js/58.e2e1b6dd.js"><link rel="prefetch" href="/keep-Learning/assets/js/59.195b09a3.js"><link rel="prefetch" href="/keep-Learning/assets/js/6.7294f365.js"><link rel="prefetch" href="/keep-Learning/assets/js/60.b0c6ca2b.js"><link rel="prefetch" href="/keep-Learning/assets/js/61.d8137606.js"><link rel="prefetch" href="/keep-Learning/assets/js/62.354a6c3b.js"><link rel="prefetch" href="/keep-Learning/assets/js/63.42a16259.js"><link rel="prefetch" href="/keep-Learning/assets/js/64.44130cd9.js"><link rel="prefetch" href="/keep-Learning/assets/js/65.826334d1.js"><link rel="prefetch" href="/keep-Learning/assets/js/66.39bd2327.js"><link rel="prefetch" href="/keep-Learning/assets/js/67.89147bbe.js"><link rel="prefetch" href="/keep-Learning/assets/js/68.a7602bd4.js"><link rel="prefetch" href="/keep-Learning/assets/js/69.028f1340.js"><link rel="prefetch" href="/keep-Learning/assets/js/7.a9fa44ec.js"><link rel="prefetch" href="/keep-Learning/assets/js/70.3bb91667.js"><link rel="prefetch" href="/keep-Learning/assets/js/71.65fb15dd.js"><link rel="prefetch" href="/keep-Learning/assets/js/72.00066c85.js"><link rel="prefetch" href="/keep-Learning/assets/js/73.47b522ff.js"><link rel="prefetch" href="/keep-Learning/assets/js/74.7a6ef089.js"><link rel="prefetch" href="/keep-Learning/assets/js/75.b187d3a1.js"><link rel="prefetch" href="/keep-Learning/assets/js/76.88a347ac.js"><link rel="prefetch" href="/keep-Learning/assets/js/77.6f86a34a.js"><link rel="prefetch" href="/keep-Learning/assets/js/78.d0ed26d6.js"><link rel="prefetch" href="/keep-Learning/assets/js/79.83c1ce53.js"><link rel="prefetch" href="/keep-Learning/assets/js/8.acbc06dd.js"><link rel="prefetch" href="/keep-Learning/assets/js/80.a48aa37a.js"><link rel="prefetch" href="/keep-Learning/assets/js/81.6eacd104.js"><link rel="prefetch" href="/keep-Learning/assets/js/82.25ef373b.js"><link rel="prefetch" href="/keep-Learning/assets/js/83.09550954.js"><link rel="prefetch" href="/keep-Learning/assets/js/84.e8671abc.js"><link rel="prefetch" href="/keep-Learning/assets/js/85.b1b7d209.js"><link rel="prefetch" href="/keep-Learning/assets/js/86.d297bac9.js"><link rel="prefetch" href="/keep-Learning/assets/js/87.eeea66b3.js"><link rel="prefetch" href="/keep-Learning/assets/js/88.0ea72a36.js"><link rel="prefetch" href="/keep-Learning/assets/js/89.4155e98e.js"><link rel="prefetch" href="/keep-Learning/assets/js/9.ad2f8d07.js"><link rel="prefetch" href="/keep-Learning/assets/js/90.611a7011.js"><link rel="prefetch" href="/keep-Learning/assets/js/91.e84d85cf.js"><link rel="prefetch" href="/keep-Learning/assets/js/92.30b75a79.js"><link rel="prefetch" href="/keep-Learning/assets/js/93.0ccb8db1.js"><link rel="prefetch" href="/keep-Learning/assets/js/94.f5e0fbaf.js"><link rel="prefetch" href="/keep-Learning/assets/js/96.654c8e0c.js"><link rel="prefetch" href="/keep-Learning/assets/js/97.b65e23fb.js"><link rel="prefetch" href="/keep-Learning/assets/js/98.e14a8d6c.js"><link rel="prefetch" href="/keep-Learning/assets/js/99.e2ce5525.js">
+    <link rel="stylesheet" href="/keep-Learning/assets/css/0.styles.69d11f16.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/keep-Learning/" class="home-link router-link-active"><!----> <span class="site-name">Learing And Sharing</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/keep-Learning/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分享" class="dropdown-title"><span class="title">技术分享</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/keep-Learning/javascript/javascript-learning-and-summary/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/html/html-learning-and-summary/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/css/css-learning-and-summary/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/webpack/webpack-learning-and-summary/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/ts/ts-learning-and-summary/" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/nodejs/nodejs-learning-and-summary/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/weex/weex-learning-and-summary/" class="nav-link">
+  Weex
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/network/network-learning-and-summary/" class="nav-link">
+  Network
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/datastructure/datastructure-learning-and-summary/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/mixin/mixin-learning-and-summary/" class="nav-link">
+  日常杂记
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Andraw-lin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/keep-Learning/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分享" class="dropdown-title"><span class="title">技术分享</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/keep-Learning/javascript/javascript-learning-and-summary/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/html/html-learning-and-summary/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/css/css-learning-and-summary/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/webpack/webpack-learning-and-summary/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/ts/ts-learning-and-summary/" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/nodejs/nodejs-learning-and-summary/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/weex/weex-learning-and-summary/" class="nav-link">
+  Weex
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/network/network-learning-and-summary/" class="nav-link">
+  Network
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/datastructure/datastructure-learning-and-summary/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/mixin/mixin-learning-and-summary/" class="nav-link">
+  日常杂记
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Andraw-lin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/keep-Learning/vue/" class="sidebar-link">Vue 学习和总结</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/keep-Learning/vue/vue-source-explporation/" class="sidebar-heading clickable router-link-active open"><span>Vue 源码的探究和学习</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】数据初始化之响应式探究（上）.html" class="sidebar-link">1. 数据初始化之响应式探究（上）</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】数据初始化之响应式探究（下）.html" class="sidebar-link">2. 数据初始化之响应式探究（下）</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】数据初始化之依赖收集（上）.html" class="sidebar-link">3. 数据初始化之依赖收集（上）</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】数据初始化之依赖收集（下）.html" class="sidebar-link">4. 数据初始化之依赖收集（下）</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】数据初始化之依赖更新.html" class="active sidebar-link">5. 数据初始化之依赖更新</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】数据初始化之依赖更新.html#先聊聊观察者模式" class="sidebar-link">先聊聊观察者模式</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】数据初始化之依赖更新.html#从源码角度分析" class="sidebar-link">从源码角度分析</a></li></ul></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】为什么不推荐使用 $forceUpdate.html" class="sidebar-link">6. 为什么不推荐使用 $forceUpdate</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】计算属性 Computed.html" class="sidebar-link">7. 计算属性 Computed</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】侦听器 Watch.html" class="sidebar-link">8. 侦听器 Watch</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】方法 Methods.html" class="sidebar-link">9. 方法 Methods</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】运行机制之 Props.html" class="sidebar-link">10. 运行机制之 Props</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】混合 Mixin（上）.html" class="sidebar-link">11. 混合 Mixin（上）</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】混合 Mixin（下）.html" class="sidebar-link">12. 混合 Mixin（下）</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】生命周期 Lifecycle.html" class="sidebar-link">13. 生命周期 Lifecycle</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】异步更新队列之 NextTick.html" class="sidebar-link">14. 异步更新队列之 NextTick</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】从 Template 到 DOM 过程是怎样的.html" class="sidebar-link">15. 从 Template 到 DOM 过程是怎样的</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】编译 Compile（上）.html" class="sidebar-link">16. 编译 Compile（上）</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】编译 Compile（下）.html" class="sidebar-link">17. 编译 Compile（下）</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】渲染 Render.html" class="sidebar-link">18. 渲染 Render (AST -&gt; VNode)</a></li><li><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】如何在更新 Patch 中进行 Diff.html" class="sidebar-link">19. 如何在更新 Patch 中进行 Diff</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="先聊聊观察者模式"><a href="#先聊聊观察者模式" class="header-anchor">#</a> 先聊聊观察者模式</h2> <p>观察者模式，又叫订阅-发布模式，定义了一种一对多的关系。让多个对象同时观察某一个主题对象的变化，从而执行相对应的回调函数。现在就来看一下观察者模式的实现思想：</p> <ul><li>发布者（某一主题对象）需包含一个数组属性用于存储订阅者对象；</li> <li>订阅时：直接将订阅者<code>Push</code>到发布者数组属性中；</li> <li>退订时：通过循环遍历，将需要退订的订阅者从发布者的数组属性中删除；</li> <li>发布时：通过循环遍历，逐一执行发布者数组属性中每个元素的回调函数；</li></ul> <p>该模式思想大概了解了，那用 JavaScript 究竟如何实现呢？现在就来瞅瞅：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 发布者</span>
+<span class="token keyword">function</span> <span class="token function">Publisher</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>watcher <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Publisher</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">addWatcher</span> <span class="token operator">=</span> <span class="token parameter">obj</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>watcher<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">Publisher</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">publish</span> <span class="token operator">=</span> <span class="token parameter">obj</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>watcher<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token keyword">typeof</span> item<span class="token punctuation">.</span>update <span class="token operator">===</span> <span class="token string">'function'</span> <span class="token operator">&amp;&amp;</span> item<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 订阅者</span>
+<span class="token keyword">function</span> <span class="token function">Subscriber</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+<span class="token punctuation">}</span>
+<span class="token class-name">Subscriber</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> is updated.........</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>既然提到观察者模式，那肯定和本主题相关联。首先在 Vue 实现的依赖收集以及依赖更新中，其实就是用到了观察者模式，响应式属性就是发布者，而 Watcher 依赖就是订阅者。每当响应式属性发生更新时，都会直接通知到其 dep 中保存的所有订阅者进行响应的更新。</p> <p>接下来，就让我们瞅瞅在 Vue 中是如何实现依赖更新的。</p> <h2 id="从源码角度分析"><a href="#从源码角度分析" class="header-anchor">#</a> 从源码角度分析</h2> <p>从前面的章节中，我有提及过，涉及到响应式属性的依赖更新，主要有两个地方，分别是 Setter 函数和全局<code>$set</code>方法。接下来我们就分别来看看 🤔 。</p> <ol><li><p>Setter 函数中依赖更新</p> <p>前面提到，只有 Vue 能监测到的更新才会主动触发 Setter 函数，先看下源码中的 Setter 函数是如何处理的：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">defineReactive$$1</span> <span class="token punctuation">(</span>
+	<span class="token parameter">obj<span class="token punctuation">,</span>
+ 	key<span class="token punctuation">,</span>
+ 	val<span class="token punctuation">,</span>
+ 	customSetter<span class="token punctuation">,</span>
+ 	shallow</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      enumerable<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      configurable<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token comment">// ...</span>
+      <span class="token function-variable function">set</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token function">reactiveSetter</span> <span class="token punctuation">(</span><span class="token parameter">newVal</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// ...</span>
+        dep<span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+<span class="token class-name">Dep</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">notify</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">notify</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> subs <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>subs<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 数组的浅复制，避免影响到元素组</span>
+  <span class="token comment">// ...</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> l <span class="token operator">=</span> subs<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> l<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    subs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上述代码很好理解，当响应式属性更新时，会直接触发到 Setter 函数，这时候就会调用 dep 对象上的 notify 方法，该方法做的事情就是遍历其保存的 Watcher 依赖，并逐个触发其更新回调函数。</p> <p>看到这里，也许你还会有一个疑问，那就是 Watcher 依赖的更新回调函数是如何产生的？</p> <p>其实在元素挂载时所创建的 Watcher 依赖就已经定义了其更新回调函数，现在就来看看</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">mountComponent</span> <span class="token punctuation">(</span>
+	<span class="token parameter">vm<span class="token punctuation">,</span>
+ 	el<span class="token punctuation">,</span>
+ 	hydrating</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    <span class="token keyword">var</span> updateComponent<span class="token punctuation">;</span>
+    <span class="token function-variable function">updateComponent</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 更新回调函数的设置</span>
+      vm<span class="token punctuation">.</span><span class="token function">_update</span><span class="token punctuation">(</span>vm<span class="token punctuation">.</span><span class="token function">_render</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> hydrating<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">new</span> <span class="token class-name">Watcher</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> updateComponent<span class="token punctuation">,</span> noop<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">before</span><span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token function">before</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>vm<span class="token punctuation">.</span>_isMounted <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>vm<span class="token punctuation">.</span>_isDestroyed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">callHook</span><span class="token punctuation">(</span>vm<span class="token punctuation">,</span> <span class="token string">'beforeUpdate'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token boolean">true</span> <span class="token comment">/* isRenderWatcher */</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> <span class="token function-variable function">Watcher</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">Watcher</span> <span class="token punctuation">(</span>
+	<span class="token parameter">vm<span class="token punctuation">,</span>
+ 	expOrFn<span class="token punctuation">,</span>
+ 	cb<span class="token punctuation">,</span>
+ 	options<span class="token punctuation">,</span>
+ 	isRenderWatcher</span>
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// ...</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> expOrFn <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// expOrFn 就是更新回调函数</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>getter <span class="token operator">=</span> expOrFn<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// ...</span>
+  <span class="token punctuation">}</span>
+
+<span class="token class-name">Watcher</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">update</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token function">update</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">/* istanbul ignore else */</span>
+	<span class="token comment">// ...</span>
+  <span class="token function">queueWatcher</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 利用队列形式进行更新每一个 Watcher 依赖，该方法中最后都会直接执行其更新回调函数</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><p>可以看到的是，组件在挂载的过程中，通过 Watcher 依赖本身的 getter 属性进行收集更新回调函数。另外，当执行 Watcher 依赖的 update 方法时，即相当于执行了 queueWatcher 方法。</p> <p>queueWatcher 方法需要探讨一下的是，会将 Watcher 依赖推进到一个队列中，然后再按顺序滴拿出来进行更新，而所谓的更新就是直接调用了其 Watcher 依赖本身的 getter 函数，从而更新依赖中响应式属性的值。</p></li> <li><p>全局<code>$set</code>方法中依赖更新</p> <p>在依赖收集的章节中，我有说过，官方提供的全局<code>$set</code>方法，其实就是利用<code>__ob__</code>中保存的依赖进行设置和更新的。现在我们就来看看源码究竟是如何设置和更新的：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$<span class="token keyword">set</span> <span class="token operator">=</span> <span class="token keyword">set</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * Set a property on an object. Adds the new property and
+ * triggers change notification if the property doesn't
+ * already exist.
+ */</span>
+<span class="token keyword">function</span> <span class="token keyword">set</span> <span class="token punctuation">(</span><span class="token parameter">target<span class="token punctuation">,</span> key<span class="token punctuation">,</span> val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token keyword">var</span> ob <span class="token operator">=</span> <span class="token punctuation">(</span>target<span class="token punctuation">)</span><span class="token punctuation">.</span>__ob__<span class="token punctuation">;</span>
+  <span class="token comment">// ...</span>
+  <span class="token function">defineReactive$$1</span><span class="token punctuation">(</span>ob<span class="token punctuation">.</span>value<span class="token punctuation">,</span> key<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 对新添加属性进行响应式处理</span>
+  ob<span class="token punctuation">.</span>dep<span class="token punctuation">.</span><span class="token function">notify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 初始化响应式处理后，同时通知更新</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>由代码中 set 方法注释可以看到，在响应式对象上新增属性时触发更新通知。在触发更新前，会先把新增的属性进行响应式处理 defineReactive$$1 ，紧接着就是根据此前存储的<code>__ob__</code>中依赖进行逐一通知更新，其中更新过程和上述调用 Watcher 依赖的 update 方法是一样的。</p></li></ol> <p>现在来总结一下：</p> <ul><li>Vue 中实现依赖更新是使用了观察者模式，通过 Getter 函数和<code>__ob__</code>中收集的依赖进行逐一更新；</li> <li>对响应式属性的处理会主动触发 Setter 函数，然后使用 Getter 函数中收集的依赖进行逐一更新。对非响应式属性的处理，则需要调用全局 $set 方法，使用<code>__ob__</code>中收集的依赖进行逐一更新并且把该<strong>新增属性进行响应式处理</strong>；</li> <li>更新回调函数会在组件挂载时所创建的 Watcher 依赖进行设置，在通知更新时，会直接使用队列的方式进行更新，先到先处理；</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】数据初始化之依赖收集（下）.html" class="prev">
+        4. 数据初始化之依赖收集（下）
+      </a></span> <span class="next"><a href="/keep-Learning/vue/vue-source-explporation/【 Vue 源码分析 】为什么不推荐使用 $forceUpdate.html">
+        6. 为什么不推荐使用 $forceUpdate
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/keep-Learning/assets/js/app.90ccec97.js" defer></script><script src="/keep-Learning/assets/js/2.71580b53.js" defer></script><script src="/keep-Learning/assets/js/95.7e23aad8.js" defer></script>
+  </body>
+</html>

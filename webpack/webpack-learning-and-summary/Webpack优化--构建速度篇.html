@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Webpack 优化--构建速度篇 | Learing And Sharing</title>
+    <meta name="description" content="好好学习，天天向上💪">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/keep-Learning/assets/css/0.styles.69d11f16.css" as="style"><link rel="preload" href="/keep-Learning/assets/js/app.90ccec97.js" as="script"><link rel="preload" href="/keep-Learning/assets/js/2.71580b53.js" as="script"><link rel="preload" href="/keep-Learning/assets/js/110.05776fb6.js" as="script"><link rel="prefetch" href="/keep-Learning/assets/js/10.99f30dcf.js"><link rel="prefetch" href="/keep-Learning/assets/js/100.53100d9a.js"><link rel="prefetch" href="/keep-Learning/assets/js/101.02f72051.js"><link rel="prefetch" href="/keep-Learning/assets/js/102.60bb996e.js"><link rel="prefetch" href="/keep-Learning/assets/js/103.c7f3df5b.js"><link rel="prefetch" href="/keep-Learning/assets/js/104.e8378220.js"><link rel="prefetch" href="/keep-Learning/assets/js/105.90235e89.js"><link rel="prefetch" href="/keep-Learning/assets/js/106.f4905ea3.js"><link rel="prefetch" href="/keep-Learning/assets/js/107.02dfbd1b.js"><link rel="prefetch" href="/keep-Learning/assets/js/108.e4ffed8c.js"><link rel="prefetch" href="/keep-Learning/assets/js/109.2f6191db.js"><link rel="prefetch" href="/keep-Learning/assets/js/11.ccfc084d.js"><link rel="prefetch" href="/keep-Learning/assets/js/111.b05f070d.js"><link rel="prefetch" href="/keep-Learning/assets/js/112.e07a4e74.js"><link rel="prefetch" href="/keep-Learning/assets/js/113.71af1d2b.js"><link rel="prefetch" href="/keep-Learning/assets/js/114.914195f4.js"><link rel="prefetch" href="/keep-Learning/assets/js/115.3a0e92aa.js"><link rel="prefetch" href="/keep-Learning/assets/js/116.4ab80baa.js"><link rel="prefetch" href="/keep-Learning/assets/js/12.5bee8056.js"><link rel="prefetch" href="/keep-Learning/assets/js/13.05de0df0.js"><link rel="prefetch" href="/keep-Learning/assets/js/14.d86b4a20.js"><link rel="prefetch" href="/keep-Learning/assets/js/15.887efa99.js"><link rel="prefetch" href="/keep-Learning/assets/js/16.f7c7fa8d.js"><link rel="prefetch" href="/keep-Learning/assets/js/17.dbf7a65f.js"><link rel="prefetch" href="/keep-Learning/assets/js/18.e57690bf.js"><link rel="prefetch" href="/keep-Learning/assets/js/19.7486ada7.js"><link rel="prefetch" href="/keep-Learning/assets/js/20.d9250e4c.js"><link rel="prefetch" href="/keep-Learning/assets/js/21.71046546.js"><link rel="prefetch" href="/keep-Learning/assets/js/22.5d1bafeb.js"><link rel="prefetch" href="/keep-Learning/assets/js/23.06f0e746.js"><link rel="prefetch" href="/keep-Learning/assets/js/24.2d27300f.js"><link rel="prefetch" href="/keep-Learning/assets/js/25.08ee3872.js"><link rel="prefetch" href="/keep-Learning/assets/js/26.b747bff1.js"><link rel="prefetch" href="/keep-Learning/assets/js/27.895e5c28.js"><link rel="prefetch" href="/keep-Learning/assets/js/28.8674bd28.js"><link rel="prefetch" href="/keep-Learning/assets/js/29.00b3c0e2.js"><link rel="prefetch" href="/keep-Learning/assets/js/3.227fd7b0.js"><link rel="prefetch" href="/keep-Learning/assets/js/30.7c8a2e90.js"><link rel="prefetch" href="/keep-Learning/assets/js/31.4e94fa86.js"><link rel="prefetch" href="/keep-Learning/assets/js/32.24db43de.js"><link rel="prefetch" href="/keep-Learning/assets/js/33.3a9d7c5b.js"><link rel="prefetch" href="/keep-Learning/assets/js/34.455ff1fa.js"><link rel="prefetch" href="/keep-Learning/assets/js/35.bf04ef16.js"><link rel="prefetch" href="/keep-Learning/assets/js/36.f733bfb6.js"><link rel="prefetch" href="/keep-Learning/assets/js/37.507ec8ee.js"><link rel="prefetch" href="/keep-Learning/assets/js/38.4c8024fc.js"><link rel="prefetch" href="/keep-Learning/assets/js/39.e5094649.js"><link rel="prefetch" href="/keep-Learning/assets/js/4.c62e84b3.js"><link rel="prefetch" href="/keep-Learning/assets/js/40.6dd7a473.js"><link rel="prefetch" href="/keep-Learning/assets/js/41.14db9a5d.js"><link rel="prefetch" href="/keep-Learning/assets/js/42.342c49d2.js"><link rel="prefetch" href="/keep-Learning/assets/js/43.e2f02df0.js"><link rel="prefetch" href="/keep-Learning/assets/js/44.85c43572.js"><link rel="prefetch" href="/keep-Learning/assets/js/45.2d71b584.js"><link rel="prefetch" href="/keep-Learning/assets/js/46.26841be2.js"><link rel="prefetch" href="/keep-Learning/assets/js/47.2be49ff6.js"><link rel="prefetch" href="/keep-Learning/assets/js/48.b0982983.js"><link rel="prefetch" href="/keep-Learning/assets/js/49.0160ec63.js"><link rel="prefetch" href="/keep-Learning/assets/js/5.c9cb8de9.js"><link rel="prefetch" href="/keep-Learning/assets/js/50.d1a3af12.js"><link rel="prefetch" href="/keep-Learning/assets/js/51.a655886f.js"><link rel="prefetch" href="/keep-Learning/assets/js/52.93851e74.js"><link rel="prefetch" href="/keep-Learning/assets/js/53.c8009c28.js"><link rel="prefetch" href="/keep-Learning/assets/js/54.7945804f.js"><link rel="prefetch" href="/keep-Learning/assets/js/55.0d1b82a0.js"><link rel="prefetch" href="/keep-Learning/assets/js/56.ea4f3968.js"><link rel="prefetch" href="/keep-Learning/assets/js/57.c7fe55e7.js"><link rel="prefetch" href="/keep-Learning/assets/js/58.e2e1b6dd.js"><link rel="prefetch" href="/keep-Learning/assets/js/59.195b09a3.js"><link rel="prefetch" href="/keep-Learning/assets/js/6.7294f365.js"><link rel="prefetch" href="/keep-Learning/assets/js/60.b0c6ca2b.js"><link rel="prefetch" href="/keep-Learning/assets/js/61.d8137606.js"><link rel="prefetch" href="/keep-Learning/assets/js/62.354a6c3b.js"><link rel="prefetch" href="/keep-Learning/assets/js/63.42a16259.js"><link rel="prefetch" href="/keep-Learning/assets/js/64.44130cd9.js"><link rel="prefetch" href="/keep-Learning/assets/js/65.826334d1.js"><link rel="prefetch" href="/keep-Learning/assets/js/66.39bd2327.js"><link rel="prefetch" href="/keep-Learning/assets/js/67.89147bbe.js"><link rel="prefetch" href="/keep-Learning/assets/js/68.a7602bd4.js"><link rel="prefetch" href="/keep-Learning/assets/js/69.028f1340.js"><link rel="prefetch" href="/keep-Learning/assets/js/7.a9fa44ec.js"><link rel="prefetch" href="/keep-Learning/assets/js/70.3bb91667.js"><link rel="prefetch" href="/keep-Learning/assets/js/71.65fb15dd.js"><link rel="prefetch" href="/keep-Learning/assets/js/72.00066c85.js"><link rel="prefetch" href="/keep-Learning/assets/js/73.47b522ff.js"><link rel="prefetch" href="/keep-Learning/assets/js/74.7a6ef089.js"><link rel="prefetch" href="/keep-Learning/assets/js/75.b187d3a1.js"><link rel="prefetch" href="/keep-Learning/assets/js/76.88a347ac.js"><link rel="prefetch" href="/keep-Learning/assets/js/77.6f86a34a.js"><link rel="prefetch" href="/keep-Learning/assets/js/78.d0ed26d6.js"><link rel="prefetch" href="/keep-Learning/assets/js/79.83c1ce53.js"><link rel="prefetch" href="/keep-Learning/assets/js/8.acbc06dd.js"><link rel="prefetch" href="/keep-Learning/assets/js/80.a48aa37a.js"><link rel="prefetch" href="/keep-Learning/assets/js/81.6eacd104.js"><link rel="prefetch" href="/keep-Learning/assets/js/82.25ef373b.js"><link rel="prefetch" href="/keep-Learning/assets/js/83.09550954.js"><link rel="prefetch" href="/keep-Learning/assets/js/84.e8671abc.js"><link rel="prefetch" href="/keep-Learning/assets/js/85.b1b7d209.js"><link rel="prefetch" href="/keep-Learning/assets/js/86.d297bac9.js"><link rel="prefetch" href="/keep-Learning/assets/js/87.eeea66b3.js"><link rel="prefetch" href="/keep-Learning/assets/js/88.0ea72a36.js"><link rel="prefetch" href="/keep-Learning/assets/js/89.4155e98e.js"><link rel="prefetch" href="/keep-Learning/assets/js/9.ad2f8d07.js"><link rel="prefetch" href="/keep-Learning/assets/js/90.611a7011.js"><link rel="prefetch" href="/keep-Learning/assets/js/91.e84d85cf.js"><link rel="prefetch" href="/keep-Learning/assets/js/92.30b75a79.js"><link rel="prefetch" href="/keep-Learning/assets/js/93.0ccb8db1.js"><link rel="prefetch" href="/keep-Learning/assets/js/94.f5e0fbaf.js"><link rel="prefetch" href="/keep-Learning/assets/js/95.7e23aad8.js"><link rel="prefetch" href="/keep-Learning/assets/js/96.654c8e0c.js"><link rel="prefetch" href="/keep-Learning/assets/js/97.b65e23fb.js"><link rel="prefetch" href="/keep-Learning/assets/js/98.e14a8d6c.js"><link rel="prefetch" href="/keep-Learning/assets/js/99.e2ce5525.js">
+    <link rel="stylesheet" href="/keep-Learning/assets/css/0.styles.69d11f16.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/keep-Learning/" class="home-link router-link-active"><!----> <span class="site-name">Learing And Sharing</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/keep-Learning/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分享" class="dropdown-title"><span class="title">技术分享</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/keep-Learning/javascript/javascript-learning-and-summary/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/html/html-learning-and-summary/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/css/css-learning-and-summary/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/webpack/webpack-learning-and-summary/" class="nav-link router-link-active">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/ts/ts-learning-and-summary/" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/nodejs/nodejs-learning-and-summary/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/weex/weex-learning-and-summary/" class="nav-link">
+  Weex
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/network/network-learning-and-summary/" class="nav-link">
+  Network
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/datastructure/datastructure-learning-and-summary/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/mixin/mixin-learning-and-summary/" class="nav-link">
+  日常杂记
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Andraw-lin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/keep-Learning/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分享" class="dropdown-title"><span class="title">技术分享</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/keep-Learning/javascript/javascript-learning-and-summary/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/html/html-learning-and-summary/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/css/css-learning-and-summary/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/webpack/webpack-learning-and-summary/" class="nav-link router-link-active">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/ts/ts-learning-and-summary/" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/nodejs/nodejs-learning-and-summary/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/weex/weex-learning-and-summary/" class="nav-link">
+  Weex
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/network/network-learning-and-summary/" class="nav-link">
+  Network
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/datastructure/datastructure-learning-and-summary/" class="nav-link">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/mixin/mixin-learning-and-summary/" class="nav-link">
+  日常杂记
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Andraw-lin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/keep-Learning/webpack/webpack-learning-and-summary" class="sidebar-heading clickable router-link-active open"><span>Webpack 学习和总结</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack究竟是如何运行的.html" class="sidebar-link">Webpack究竟是如何运行的</a></li><li><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack优化--构建速度篇.html" class="active sidebar-link">Webpack优化--构建速度篇</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack优化--构建速度篇.html#使用resolve缩少文件的搜索范围" class="sidebar-link">使用resolve缩少文件的搜索范围</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack优化--构建速度篇.html#dllplugin构建动态链接库" class="sidebar-link">DllPlugin构建动态链接库</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack优化--构建速度篇.html#happypack多个进程处理文件" class="sidebar-link">HappyPack多个进程处理文件</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack优化--构建速度篇.html#paralleuglifyplugin多个进程压缩文件" class="sidebar-link">ParalleUglifyPlugin多个进程压缩文件</a></li></ul></li><li><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack优化--开发体验篇.html" class="sidebar-link">Webpack优化--开发体验篇</a></li><li><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack优化--输出质量篇.html" class="sidebar-link">Webpack优化--输出质量篇</a></li><li><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack之模块化优化.html" class="sidebar-link">Webpack之模块化优化</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="webpack-优化-构建速度篇"><a href="#webpack-优化-构建速度篇" class="header-anchor">#</a> Webpack 优化--构建速度篇</h1> <p>在日常的开发构建过程或生产打包构建过程中，我们都会遇到过因为构建速度非常缓慢导致耗时严重，不仅得让我们把时间浪费在等待的时间，最重要的还得会直接影响到我们的加班啊...😂</p> <p>所以优化 Webpack 的构建速度显得尤为重要。当项目庞大时构建的耗时可能会变得更长，每次等待构建的耗时加起来也会是一个大数目。</p> <p>为此，得总结一下如何在 Webpack 构建过程里加快速度。🤔</p> <h2 id="使用resolve缩少文件的搜索范围"><a href="#使用resolve缩少文件的搜索范围" class="header-anchor">#</a> 使用resolve缩少文件的搜索范围</h2> <p>Webpack 在启动后会<strong>从配置的 Entry 入口出发，解析出文件中的导入语句，再递归解析</strong>。</p> <p>Webpack 在解析文件过程中，遇到导入语句时，会做两件事：</p> <ul><li>根据导入语句去寻找对应的要导入的文件。</li> <li>找到对应文件后，根据匹配到的后缀名，然后使用配置中相应的 Loader 处理该文件。</li></ul> <p>在小型项目中，上述两个过程都会很快，但是对于一个庞大系统来说，寻找解析就会显得尤为吃力，这样构建速度也会慢慢凸显出来。</p> <blockquote><p>Loader 中使用 include 针对性地处理文件</p></blockquote> <p>在 Loader 中通过配置其 include 属性，可<strong>针对性地对主要目录进行递归解析</strong>，可有效地避免处理其他没必要目录的递归解析。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+      use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'babel-loader'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      include<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'src'</span><span class="token punctuation">)</span> <span class="token comment">// 只对src目录进行递归解析，其他目录一律不解析</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>配置 resolve.modules 减少第三方模块查找流程</p></blockquote> <p>如果有了解过 NodeJs 的童鞋，相信对于其加载模块机制会了解，这里就来简单描述一下。</p> <p>在 Javascript 主进程执行过程中，当遇到要加载的第三方模块时，会在当前文件对应的目录下的 node_modules 文件夹去寻找该模块，若无则会向上一层的目录下的 node_modules （即 ../node_modules 文件夹）去查找，以此类推。</p> <p>在上面这个过程中，无疑会产生很多没必要的遍历查找过程，为此，<strong>配置 resolve.modules 会直接指定在相应的目录下进行查找，以减少没必要的查找过程</strong>。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  modules<span class="token punctuation">:</span> <span class="token punctuation">[</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>配置 resolve.mainFields 减少第三方模块入口查找流程</p></blockquote> <p>在开发过程中安装的第三方模块，都会自带一个 package.json 文件，用于描述该模块的属性，包括入口文件的定义。</p> <p><strong>第三方模块的入口文件可以有 browser、module、main 三个属性进行定义</strong>。而 <strong>reslove.mainFields 可用于配置直接从哪个属性进行入手加载第三方模块</strong>。默认情况下，reslove.mainFields 和当前环境 target 相关联。</p> <ul><li>当 target 为 web 或者 webworker 时，默认值是[&quot;browser&quot;, &quot;module&quot;, &quot;main&quot;]；</li> <li>当 target 为其他情况时，值是[&quot;module&quot;, &quot;main&quot;]；</li></ul> <p><strong>由于绝大多数第三方模块都采用 main 字段来描述入口，为减少搜索入口步骤，我们可以直接配置 resolve.mainFields 为 main</strong>。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  mainFields<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;main&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>配置 resolve.alias 减少完整第三方模块的查找依赖流程</p></blockquote> <p>以 Vue 为例，在打包后，都会存在两个文件，一个是 vue.js，另一个是 vue.min.js。前者用于开发环境，而后者用于生产环境。</p> <p>开发环境下，Webpack 在构建过程遇到需要引入 vue 时，会直接寻找 vue.js。我们应该知道 vue.js 会分为很多个文件组成，在执行 vue.js 时就需要根据不同场景去引入相应模块进行解析，这过程就会导致耗时大。</p> <p>为此，<strong>配置 resolve.alias 可以让 Webpack 在处理 vue 时，直接使用单独、完整的 vue.min.js 文件，从而跳过耗时的递归解析操作</strong>。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  alias<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'vue'</span><span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./node_modules/vue/dist/vue.min.js'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>需要注意的是，不是所有的第三方模块都可以这样处理。只有完整的第三方模块才可以，那什么是完整的第三方模块。</p> <p>我们知道，一个 vue 构建项目，基本每一个源代码都需要用到，因此它是完整的，再比如 lodash.js，我们在开发过程中，只需要按需引入部分方法，而且有绝大部分的源码我们是没必要引用的，因此它是不完整的。</p> <p><strong>配置 resolve.alias 只能在需要全部源代码的第三方模块进行使用，按需使用的第三方模块一律不能使用</strong>。</p> <p><strong>若强制在不完整的第三方模块中使用 resolve.alias 配置，那么在 Tree-Shaking 过程中就无法去掉没用的代码</strong>，从而增大了包的体积，得不偿失啊...一定要慎用！！！</p> <blockquote><p>配置 resolve.extensions 减少文件后缀名匹配流程</p></blockquote> <p>相信很多童鞋都写过 import MyComponent from 'components/MyComponent' 这样类似语句，可以看到的是，一般情况下引入相应的 Vue 组件或 React 组件，都是不会加入相应的后缀名。</p> <p>知道为啥不？</p> <p>那是很多时候，在 Webpack 的 resolve.extensions 中配置了。<strong>在导入语句中没带文件后缀时，配置 resolve.extensions 可自动带上后缀名询问相应文件是否存在，默认值是 [&quot;js&quot;, &quot;json&quot;]。</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  extensions<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&quot;vue&quot;</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p><strong>配置 resolve.extensions 可针对性地减少文件后缀名的匹配流程。</strong></p> <blockquote><p>配置 module.noParse 忽略对未采用模块化文件的递归解析处理</p></blockquote> <p>形如 jQuery、ChartJS 等模块都是木有采用模块化标准的，如果要让 Webpack 解析这些文件将会耗费更多时间。</p> <p>再比如前面讲到的，使用 vue.min.js 文件，由于 min.js 文件未采用模块化标准，都是包含全部源代码的。<strong>通过配置 module.noParse 可忽略对 vue.min.js 文件的递归解析处理。</strong></p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+  noParse<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token regex">/vue\min\.js$/</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="dllplugin构建动态链接库"><a href="#dllplugin构建动态链接库" class="header-anchor">#</a> DllPlugin构建动态链接库</h2> <p>在 window 系统会经常看到 DLL 后缀名文件，这些文件叫动态链接库，在一个动态链接库中保存着其他模块需调用的函数和数据。（这就有点像一张表，表里面保存了其他模块需要调用的函数以及数据对应的地址，方便查找）</p> <p>要在项目中接入动态链接库的思想，需要做到以下几点。</p> <ul><li>将网页依赖的基础模块抽离出来，打包到一个个单独的动态链接库中，在一个动态链接库中可包含多个模块。</li> <li>当遇到需导入的模块存在于某个动态链接库中时，该模块将不会再被打包，而是直接到动态链接库中获取。</li> <li>页面依赖的所有动态链接库都需要被加载。</li></ul> <p><strong>动态链接库加快构建速度的核心思想是，大量复用模块的动态链接库只需要被编译一次，在后面的构建过程中被动态链接库包含的模块都不会重新编译，而是直接使用动态链接库中的代码</strong>。</p> <p><strong>动态链接库中常常包含最常用的第三方模块，如 react、react-dom 等</strong>，所以只要不升级这些模块的版本，动态链接库就不需要重新编译。</p> <p><strong>在 Webpack 中，已经内置支持对动态链接库</strong>。主要通过两个内置插件接入，分别是</p> <ul><li>DllPlugin 插件。用于打包出一个个单独的动态链接库文件</li> <li>DllReferencePlugin 插件。用于告诉 Webpack 使用了哪些动态链接库。</li></ul> <p>以 React 为例，在接入 DllPlugin 后，构建出来的目录结构是如下：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token operator">|</span><span class="token operator">--</span> main<span class="token punctuation">.</span>js
+<span class="token operator">|</span><span class="token operator">--</span> polyfill<span class="token punctuation">.</span>dll<span class="token punctuation">.</span>js <span class="token comment">// 包含所有依赖的polyfill，如Promise、fetch等API</span>
+<span class="token operator">|</span><span class="token operator">--</span> polyfill<span class="token punctuation">.</span>manifest<span class="token punctuation">.</span>json
+<span class="token operator">|</span><span class="token operator">--</span> react<span class="token punctuation">.</span>dll<span class="token punctuation">.</span>js <span class="token comment">// 包含React的基础运行模块，如react和react-dom模块</span>
+<span class="token operator">|</span><span class="token operator">--</span> react<span class="token punctuation">.</span>manifest<span class="token punctuation">.</span>json
+</code></pre></div><p>dll.js 文件中其实蕴含着大量模块的代码，这些<strong>模块代码都被放到一个数组中，用数组的索引作为其模块的 ID 标识，通过一个 dll_ 前缀变量全局暴露出来</strong>，即可以通过 window 进行访问（如 window.dll_react）。</p> <p>而 <strong>manifest.json 文件是由 DllPlugin 生成的，描述了与对应的 dll.js 文件中包含哪些模块以及每个模块的路径和ID</strong>。</p> <p>动态链接库文件相关的文件需要一份独立的构建输出，用于主构建使用。新建一个 webpack_dll.config.js 文件</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// webpack_dll.config.js</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> DllPlugin <span class="token operator">=</span> <span class="token function">reqiure</span><span class="token punctuation">(</span><span class="token string">'webpack/lib/DllPlugin'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    react<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'react'</span><span class="token punctuation">,</span> <span class="token string">'react-dom'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    polyfill<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'core-js/fn/object/assign'</span><span class="token punctuation">,</span> <span class="token string">'core-js/fn/promise'</span><span class="token punctuation">,</span> <span class="token string">'whatwg-fetch'</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'[name].dll.js'</span><span class="token punctuation">,</span>
+    path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">// 存放动态链接库的全局变量名称，例如react就是_dll_react</span>
+    <span class="token comment">// 加上_dll_是为了防止全局变量冲突</span>
+    library<span class="token punctuation">:</span> <span class="token string">'_dll_[name]'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token keyword">new</span> <span class="token class-name">Dllplugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// 动态链接库的全局变量名称，需和output.library中保持一致</span>
+      <span class="token comment">// 该字段也是输出的manifest.json文件中name字段的值，如在react.manifest.json文件中就有name: &quot;_dll_react&quot;</span>
+      name<span class="token punctuation">:</span> <span class="token string">'_dll_[name]'</span><span class="token punctuation">,</span>
+      <span class="token comment">// 定义manifest.json文件输出时的文件名称</span>
+      path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">,</span> <span class="token string">'[name].manifest.json'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>接下来看看，如何在主流程的 webpack.config.js 中配置。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// webpack.config.js</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> DllReferencePlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack/lib/DllReferencePlugin'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  entry<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    main<span class="token punctuation">:</span> <span class="token string">'./main.js'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'[name].js'</span><span class="token punctuation">,</span>
+    path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+        use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'babel-loader'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        exclude<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 告诉webpack使用了哪些动态链接库</span>
+    <span class="token keyword">new</span> <span class="token class-name">DllReferencePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      manifest<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./dist/react.manifest.json'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">DllReferencePlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      manifest<span class="token punctuation">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./dist/polyfill.manifest.json'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在执行时，先将动态链接库相关文件编译出来，因为 Webpack 配置文件中定义的 DllReferencePlugin 依赖这些文件。因此在执行构建时流程如下：</p> <ul><li>第一次执行时，动态链接库相关文件还没编译出来，需执行 webpack --config webpack_dll.config.js 命令，先编译得到动态链接库相关文件。</li> <li>第二次执行以后，由于动态链接库相关文件已经存在，可直接执行 webpack 命令运行项目。会发现项目构建速度比第一次快很多，因为动态链接库文件只会编译一遍。</li></ul> <h2 id="happypack多个进程处理文件"><a href="#happypack多个进程处理文件" class="header-anchor">#</a> HappyPack多个进程处理文件</h2> <p><strong>在使用 HappyPack 时，可进行分解任务和管理线程</strong>。先来看看 webpack 如何接入 HappyPack。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> ExtractTextPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'extract-text-plugin'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> HappyPack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'happypack'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+        <span class="token comment">// 将对.js文件的处理交给id为babel的happypack实例</span>
+        use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'happypack/loader?id=babel'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        exclude<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">,</span> <span class="token string">'node_modules'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+        <span class="token comment">// 将对.css文件的处理交给id为babel的happypack实例</span>
+        use<span class="token punctuation">:</span> ExtractTextPlugin<span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          use<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'happypack/loader?id=css'</span><span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 创建happypack实例处理任务</span>
+    <span class="token keyword">new</span> <span class="token class-name">HappyPack</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token string">'babel'</span><span class="token punctuation">,</span>
+      loaders<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'babel-loader?cacheDirectory'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token comment">// ...其他配置项</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">// 创建happypack实例处理任务</span>
+    <span class="token keyword">new</span> <span class="token class-name">HappyPack</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token string">'css'</span><span class="token punctuation">,</span>
+      loaders<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'css-loader'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token comment">// ...其他配置项</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">ExtractTextPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'[name].css'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>上述配置中，所有文件的处理都交给了 happypack/loader ，根据 id 来告诉 happypack/loader 选择哪个 happypack 实例处理文件。</p> <p>另外，在 happypack 实例中，还支持使用三个参数，分别是</p> <ul><li>threads：代表<strong>开启几个子进程处理</strong>这类型的文件，默认是3个。</li> <li>verbose：是否允许使用 happypack <strong>输出日志</strong>，默认是true。</li> <li>threadPool：代表共享进程池，<strong>多个 Happypack 实例都是使用同一个共享进程池中的子进程去处理任务</strong>，以防止资源占用过多。</li></ul> <p>一般情况下，可按如下接入 happypack。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> happyThreadPool <span class="token operator">=</span> HappyPack<span class="token punctuation">.</span><span class="token function">ThreadPool</span><span class="token punctuation">(</span><span class="token punctuation">{</span> size<span class="token punctuation">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// 构造共享进程池，在进程池中包含5个子进程</span>
+
+modules<span class="token punctuation">.</span>export <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 创建happypack实例处理任务</span>
+    <span class="token keyword">new</span> <span class="token class-name">HappyPack</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token string">'babel'</span><span class="token punctuation">,</span>
+      loaders<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'babel-loader?cacheDirectory'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token comment">// ...其他配置项</span>
+      threadPool<span class="token punctuation">:</span> happyThreadPool
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token comment">// 创建happypack实例处理任务</span>
+    <span class="token keyword">new</span> <span class="token class-name">HappyPack</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      id<span class="token punctuation">:</span> <span class="token string">'css'</span><span class="token punctuation">,</span>
+      loaders<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'css-loader'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token comment">// ...其他配置项</span>
+      threadPool<span class="token punctuation">:</span> happyThreadPool
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">ExtractTextPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      name<span class="token punctuation">:</span> <span class="token string">'[name].css'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>在使用 HappyPack 前，需如下安装：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>npm i <span class="token operator">-</span><span class="token constant">D</span> happypack
+</code></pre></div><p><strong>在 webpack 构建流程中，使用 loader 对文件的转换操作无疑是最耗时的流程</strong>。</p> <p>HappyPack 核心原理就是<strong>将 loader 对文件的转换操作分解到多个进程中去并行处理，从而减少构建时间</strong>。</p> <p>实例化 HappyPack 时，其实就是告诉 HappyPack 核心调度器通过一系列 loader 去转换一类文件，并且指定如何为该类文件转换操作分配子进程。<strong>在执行 webpack 时，核心调度器会将一个个任务分配给当前空闲子进程，子进程处理完毕就会将结果发送给核心调度器，它们间的数据交换就是通过进程间的通信 API 实现的</strong>。</p> <h2 id="paralleuglifyplugin多个进程压缩文件"><a href="#paralleuglifyplugin多个进程压缩文件" class="header-anchor">#</a> ParalleUglifyPlugin多个进程压缩文件</h2> <p>在发生产时，我们都经常使用 uglifyJS 对源代码进行压缩处理。在压缩代码过程中，需要先将 js 代码解析成抽象语法树 AST，接着再去应用各种规则分析和处理 AST，这过程计算量可谓是巨大的，耗时特别大。</p> <p><strong>使用 uglifyJS 会对文件进行一个一个的压缩，并不会并行处理，这无疑是耗时最大的</strong>。借鉴于 HappyPack 多进程分配任务优点，<strong>使用 ParalleUglifyPlugin 可以开启多个子进程，将对多个文件的压缩工作分配给多个子进程完成，每个子进程其实都是使用 uglifyJS 进行压缩，但是区别就是并行处理</strong>。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> ParalleUglifyPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack-parallel-uglify-plugin'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  plugins<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    <span class="token comment">// 使用ParallelUglifyPlugin并行压缩输出Javascript代码</span>
+    <span class="token keyword">new</span> <span class="token class-name">ParallelUglifyPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// 传递给uglifyJS的参数</span>
+      uglifyJS<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 紧凑输出</span>
+          beautify<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token comment">// 删除所有注释</span>
+          comments<span class="token punctuation">:</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        compress<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          <span class="token comment">// 在UglifyJs删除没有用到的代码时不输出警告</span>
+					warnings<span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token comment">// 删除所有的console语句，可兼容IE浏览器</span>
+          drop_console<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token comment">// 内嵌已定义但是只用到一次的变量</span>
+          collapse_vars<span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>当然 ParalleUglifyPlugin 还支持其它参数，就不一一列举，可自行观察其官方文档。需要注意的是，<strong>ParalleUglifyPlugin 同时内置了 UglifyJS 和 UglifyES，UglifyES 可并行压缩 ES6 代码</strong>。</p> <p>在使用 ParalleUglifyPlugin 时，需安装：</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code>npm i <span class="token operator">-</span><span class="token constant">D</span> ParalleUglifyPlugin
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack究竟是如何运行的.html" class="prev">
+        Webpack究竟是如何运行的
+      </a></span> <span class="next"><a href="/keep-Learning/webpack/webpack-learning-and-summary/Webpack优化--开发体验篇.html">
+        Webpack优化--开发体验篇
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/keep-Learning/assets/js/app.90ccec97.js" defer></script><script src="/keep-Learning/assets/js/2.71580b53.js" defer></script><script src="/keep-Learning/assets/js/110.05776fb6.js" defer></script>
+  </body>
+</html>

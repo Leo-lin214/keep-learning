@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>手写实现那回事 | Learing And Sharing</title>
+    <meta name="description" content="好好学习，天天向上💪">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/keep-Learning/assets/css/0.styles.69d11f16.css" as="style"><link rel="preload" href="/keep-Learning/assets/js/app.90ccec97.js" as="script"><link rel="preload" href="/keep-Learning/assets/js/2.71580b53.js" as="script"><link rel="preload" href="/keep-Learning/assets/js/25.08ee3872.js" as="script"><link rel="prefetch" href="/keep-Learning/assets/js/10.99f30dcf.js"><link rel="prefetch" href="/keep-Learning/assets/js/100.53100d9a.js"><link rel="prefetch" href="/keep-Learning/assets/js/101.02f72051.js"><link rel="prefetch" href="/keep-Learning/assets/js/102.60bb996e.js"><link rel="prefetch" href="/keep-Learning/assets/js/103.c7f3df5b.js"><link rel="prefetch" href="/keep-Learning/assets/js/104.e8378220.js"><link rel="prefetch" href="/keep-Learning/assets/js/105.90235e89.js"><link rel="prefetch" href="/keep-Learning/assets/js/106.f4905ea3.js"><link rel="prefetch" href="/keep-Learning/assets/js/107.02dfbd1b.js"><link rel="prefetch" href="/keep-Learning/assets/js/108.e4ffed8c.js"><link rel="prefetch" href="/keep-Learning/assets/js/109.2f6191db.js"><link rel="prefetch" href="/keep-Learning/assets/js/11.ccfc084d.js"><link rel="prefetch" href="/keep-Learning/assets/js/110.05776fb6.js"><link rel="prefetch" href="/keep-Learning/assets/js/111.b05f070d.js"><link rel="prefetch" href="/keep-Learning/assets/js/112.e07a4e74.js"><link rel="prefetch" href="/keep-Learning/assets/js/113.71af1d2b.js"><link rel="prefetch" href="/keep-Learning/assets/js/114.914195f4.js"><link rel="prefetch" href="/keep-Learning/assets/js/115.3a0e92aa.js"><link rel="prefetch" href="/keep-Learning/assets/js/116.4ab80baa.js"><link rel="prefetch" href="/keep-Learning/assets/js/12.5bee8056.js"><link rel="prefetch" href="/keep-Learning/assets/js/13.05de0df0.js"><link rel="prefetch" href="/keep-Learning/assets/js/14.d86b4a20.js"><link rel="prefetch" href="/keep-Learning/assets/js/15.887efa99.js"><link rel="prefetch" href="/keep-Learning/assets/js/16.f7c7fa8d.js"><link rel="prefetch" href="/keep-Learning/assets/js/17.dbf7a65f.js"><link rel="prefetch" href="/keep-Learning/assets/js/18.e57690bf.js"><link rel="prefetch" href="/keep-Learning/assets/js/19.7486ada7.js"><link rel="prefetch" href="/keep-Learning/assets/js/20.d9250e4c.js"><link rel="prefetch" href="/keep-Learning/assets/js/21.71046546.js"><link rel="prefetch" href="/keep-Learning/assets/js/22.5d1bafeb.js"><link rel="prefetch" href="/keep-Learning/assets/js/23.06f0e746.js"><link rel="prefetch" href="/keep-Learning/assets/js/24.2d27300f.js"><link rel="prefetch" href="/keep-Learning/assets/js/26.b747bff1.js"><link rel="prefetch" href="/keep-Learning/assets/js/27.895e5c28.js"><link rel="prefetch" href="/keep-Learning/assets/js/28.8674bd28.js"><link rel="prefetch" href="/keep-Learning/assets/js/29.00b3c0e2.js"><link rel="prefetch" href="/keep-Learning/assets/js/3.227fd7b0.js"><link rel="prefetch" href="/keep-Learning/assets/js/30.7c8a2e90.js"><link rel="prefetch" href="/keep-Learning/assets/js/31.4e94fa86.js"><link rel="prefetch" href="/keep-Learning/assets/js/32.24db43de.js"><link rel="prefetch" href="/keep-Learning/assets/js/33.3a9d7c5b.js"><link rel="prefetch" href="/keep-Learning/assets/js/34.455ff1fa.js"><link rel="prefetch" href="/keep-Learning/assets/js/35.bf04ef16.js"><link rel="prefetch" href="/keep-Learning/assets/js/36.f733bfb6.js"><link rel="prefetch" href="/keep-Learning/assets/js/37.507ec8ee.js"><link rel="prefetch" href="/keep-Learning/assets/js/38.4c8024fc.js"><link rel="prefetch" href="/keep-Learning/assets/js/39.e5094649.js"><link rel="prefetch" href="/keep-Learning/assets/js/4.c62e84b3.js"><link rel="prefetch" href="/keep-Learning/assets/js/40.6dd7a473.js"><link rel="prefetch" href="/keep-Learning/assets/js/41.14db9a5d.js"><link rel="prefetch" href="/keep-Learning/assets/js/42.342c49d2.js"><link rel="prefetch" href="/keep-Learning/assets/js/43.e2f02df0.js"><link rel="prefetch" href="/keep-Learning/assets/js/44.85c43572.js"><link rel="prefetch" href="/keep-Learning/assets/js/45.2d71b584.js"><link rel="prefetch" href="/keep-Learning/assets/js/46.26841be2.js"><link rel="prefetch" href="/keep-Learning/assets/js/47.2be49ff6.js"><link rel="prefetch" href="/keep-Learning/assets/js/48.b0982983.js"><link rel="prefetch" href="/keep-Learning/assets/js/49.0160ec63.js"><link rel="prefetch" href="/keep-Learning/assets/js/5.c9cb8de9.js"><link rel="prefetch" href="/keep-Learning/assets/js/50.d1a3af12.js"><link rel="prefetch" href="/keep-Learning/assets/js/51.a655886f.js"><link rel="prefetch" href="/keep-Learning/assets/js/52.93851e74.js"><link rel="prefetch" href="/keep-Learning/assets/js/53.c8009c28.js"><link rel="prefetch" href="/keep-Learning/assets/js/54.7945804f.js"><link rel="prefetch" href="/keep-Learning/assets/js/55.0d1b82a0.js"><link rel="prefetch" href="/keep-Learning/assets/js/56.ea4f3968.js"><link rel="prefetch" href="/keep-Learning/assets/js/57.c7fe55e7.js"><link rel="prefetch" href="/keep-Learning/assets/js/58.e2e1b6dd.js"><link rel="prefetch" href="/keep-Learning/assets/js/59.195b09a3.js"><link rel="prefetch" href="/keep-Learning/assets/js/6.7294f365.js"><link rel="prefetch" href="/keep-Learning/assets/js/60.b0c6ca2b.js"><link rel="prefetch" href="/keep-Learning/assets/js/61.d8137606.js"><link rel="prefetch" href="/keep-Learning/assets/js/62.354a6c3b.js"><link rel="prefetch" href="/keep-Learning/assets/js/63.42a16259.js"><link rel="prefetch" href="/keep-Learning/assets/js/64.44130cd9.js"><link rel="prefetch" href="/keep-Learning/assets/js/65.826334d1.js"><link rel="prefetch" href="/keep-Learning/assets/js/66.39bd2327.js"><link rel="prefetch" href="/keep-Learning/assets/js/67.89147bbe.js"><link rel="prefetch" href="/keep-Learning/assets/js/68.a7602bd4.js"><link rel="prefetch" href="/keep-Learning/assets/js/69.028f1340.js"><link rel="prefetch" href="/keep-Learning/assets/js/7.a9fa44ec.js"><link rel="prefetch" href="/keep-Learning/assets/js/70.3bb91667.js"><link rel="prefetch" href="/keep-Learning/assets/js/71.65fb15dd.js"><link rel="prefetch" href="/keep-Learning/assets/js/72.00066c85.js"><link rel="prefetch" href="/keep-Learning/assets/js/73.47b522ff.js"><link rel="prefetch" href="/keep-Learning/assets/js/74.7a6ef089.js"><link rel="prefetch" href="/keep-Learning/assets/js/75.b187d3a1.js"><link rel="prefetch" href="/keep-Learning/assets/js/76.88a347ac.js"><link rel="prefetch" href="/keep-Learning/assets/js/77.6f86a34a.js"><link rel="prefetch" href="/keep-Learning/assets/js/78.d0ed26d6.js"><link rel="prefetch" href="/keep-Learning/assets/js/79.83c1ce53.js"><link rel="prefetch" href="/keep-Learning/assets/js/8.acbc06dd.js"><link rel="prefetch" href="/keep-Learning/assets/js/80.a48aa37a.js"><link rel="prefetch" href="/keep-Learning/assets/js/81.6eacd104.js"><link rel="prefetch" href="/keep-Learning/assets/js/82.25ef373b.js"><link rel="prefetch" href="/keep-Learning/assets/js/83.09550954.js"><link rel="prefetch" href="/keep-Learning/assets/js/84.e8671abc.js"><link rel="prefetch" href="/keep-Learning/assets/js/85.b1b7d209.js"><link rel="prefetch" href="/keep-Learning/assets/js/86.d297bac9.js"><link rel="prefetch" href="/keep-Learning/assets/js/87.eeea66b3.js"><link rel="prefetch" href="/keep-Learning/assets/js/88.0ea72a36.js"><link rel="prefetch" href="/keep-Learning/assets/js/89.4155e98e.js"><link rel="prefetch" href="/keep-Learning/assets/js/9.ad2f8d07.js"><link rel="prefetch" href="/keep-Learning/assets/js/90.611a7011.js"><link rel="prefetch" href="/keep-Learning/assets/js/91.e84d85cf.js"><link rel="prefetch" href="/keep-Learning/assets/js/92.30b75a79.js"><link rel="prefetch" href="/keep-Learning/assets/js/93.0ccb8db1.js"><link rel="prefetch" href="/keep-Learning/assets/js/94.f5e0fbaf.js"><link rel="prefetch" href="/keep-Learning/assets/js/95.7e23aad8.js"><link rel="prefetch" href="/keep-Learning/assets/js/96.654c8e0c.js"><link rel="prefetch" href="/keep-Learning/assets/js/97.b65e23fb.js"><link rel="prefetch" href="/keep-Learning/assets/js/98.e14a8d6c.js"><link rel="prefetch" href="/keep-Learning/assets/js/99.e2ce5525.js">
+    <link rel="stylesheet" href="/keep-Learning/assets/css/0.styles.69d11f16.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/keep-Learning/" class="home-link router-link-active"><!----> <span class="site-name">Learing And Sharing</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/keep-Learning/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分享" class="dropdown-title"><span class="title">技术分享</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/keep-Learning/javascript/javascript-learning-and-summary/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/html/html-learning-and-summary/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/css/css-learning-and-summary/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/webpack/webpack-learning-and-summary/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/ts/ts-learning-and-summary/" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/nodejs/nodejs-learning-and-summary/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/weex/weex-learning-and-summary/" class="nav-link">
+  Weex
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/network/network-learning-and-summary/" class="nav-link">
+  Network
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/datastructure/datastructure-learning-and-summary/" class="nav-link router-link-active">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/mixin/mixin-learning-and-summary/" class="nav-link">
+  日常杂记
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Andraw-lin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/keep-Learning/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术分享" class="dropdown-title"><span class="title">技术分享</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/keep-Learning/javascript/javascript-learning-and-summary/" class="nav-link">
+  JavaScript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/html/html-learning-and-summary/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/css/css-learning-and-summary/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/react/" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/webpack/webpack-learning-and-summary/" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/ts/ts-learning-and-summary/" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/nodejs/nodejs-learning-and-summary/" class="nav-link">
+  Nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/weex/weex-learning-and-summary/" class="nav-link">
+  Weex
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/network/network-learning-and-summary/" class="nav-link">
+  Network
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/datastructure/datastructure-learning-and-summary/" class="nav-link router-link-active">
+  数据结构
+</a></li><li class="dropdown-item"><!----> <a href="/keep-Learning/mixin/mixin-learning-and-summary/" class="nav-link">
+  日常杂记
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/Andraw-lin" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary" class="sidebar-heading clickable router-link-active open"><span>数据结构学习和总结</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/前端中常见的算法题.html" class="sidebar-link">前端中常见的算法题</a></li><li><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html" class="active sidebar-link">手写实现那回事</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#bind-函数实现" class="sidebar-link">Bind 函数实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#call-和-apply-函数实现" class="sidebar-link">Call 和 Apply 函数实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#reduce-函数实现" class="sidebar-link">Reduce 函数实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#new-实现" class="sidebar-link">New 实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#async-await-实现" class="sidebar-link">async/await 实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#双向数据绑定的实现" class="sidebar-link">双向数据绑定的实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#object-create方法实现" class="sidebar-link">Object.create方法实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#instanceof-实现" class="sidebar-link">instanceof 实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#object-getownpropertynames方法实现" class="sidebar-link">Object.getOwnPropertyNames方法实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#promise-实现" class="sidebar-link">Promise 实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#防抖-节流实现" class="sidebar-link">防抖/节流实现</a></li><li class="sidebar-sub-header"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/手写实现那回事.html#函数柯里化实现" class="sidebar-link">函数柯里化实现</a></li></ul></li><li><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/Stack.html" class="sidebar-link">瞧瞧栈</a></li><li><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/Queue.html" class="sidebar-link">瞧瞧队列</a></li><li><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/LinkedList.html" class="sidebar-link">瞧瞧链表</a></li><li><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/Set.html" class="sidebar-link">瞧瞧集合</a></li><li><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/Dictionary.html" class="sidebar-link">瞧瞧表和哈希表</a></li><li><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/Tree.html" class="sidebar-link">瞧瞧树</a></li><li><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/ArraySort.html" class="sidebar-link">排序和搜索</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="手写实现那回事"><a href="#手写实现那回事" class="header-anchor">#</a> 手写实现那回事</h1> <p>当下不管是在面试过程中还是在日常开发过程中，一些底层的实现变得越来越有效率性，那么当理解如何实现时，能否直接写出一份实现呢？</p> <p>为此，我特意写了一些自己的理解总结，便于后期的回顾或分享。😄</p> <h2 id="bind-函数实现"><a href="#bind-函数实现" class="header-anchor">#</a> Bind 函数实现</h2> <p>实现 Bind 函数的关键点在于两点。</p> <ol><li><strong>箭头函数中的 this 指向函数定义时所在的作用域</strong>。</li> <li>使用 Bind 函数绑定返回的函数，在使用 new 时，this 的指向会指向新创建的对象，而不是原来已绑定的对象。</li></ol> <details><summary>答案</summary> <pre><code>
+  Function.prototype.myBind = function(obj) {
+    // 先判断是否为函数
+    if(typeof this !== 'function') {
+      throw new Error('This is not function...')
+    }
+    const remainArgs = Array.prototype.slice.call(arguments, 1) // 获取剩余参数
+    const TempFun = function() {} // 构造一个空函数
+    const self = this // 缓存当前函数
+    if(self.prototype) { // 保存当前函数的原型
+      TempFun.prototype = self.prototype
+    }
+    const returnFun = function() {
+      return self.apply(this instanceof TempFun ? this : obj, remainArgs)
+    }
+    returnFun.prototype = new TempFun()
+    return returnFun
+  }
+  </code></pre></details> <h2 id="call-和-apply-函数实现"><a href="#call-和-apply-函数实现" class="header-anchor">#</a> Call 和 Apply 函数实现</h2> <p>实现 Call 函数和 Apply 函数，主要体现在两点。</p> <ol><li>将当前函数保存下来，并使用 Symbol 作为属性名保存在相应对象下面。</li> <li>执行刚刚在相应对象下使用 Symbol 保存的函数，并把该结果进行返回。</li></ol> <details><summary>答案</summary> <pre><code>
+  Function.prototype.myCall = function(obj) {
+    if(typeof this !== 'function') {
+      throw new Error('This is not a function...')
+    }
+    const selfFun = this // 保存当前函数
+    const remainArgs = [...arguments].slice(1) // 获取剩余参数
+    const fn = Symbol('fn') // 避免对象函数名冲突
+    obj[fn] = selfFun
+    const result = obj[fn](...remainArgs) // 保存最终的对象调用函数结果
+    delete obj[fn] // 删除相应的对象函数
+    return result
+  }
+  </code></pre></details> <h2 id="reduce-函数实现"><a href="#reduce-函数实现" class="header-anchor">#</a> Reduce 函数实现</h2> <p>实现 Reduce 函数，主要体现在两点。</p> <ol><li>根据参数获取初始值。</li> <li>在遍历数组的过程中，必须要注意[ empty ]情况。</li></ol> <details><summary>答案</summary> <pre><code>
+  // reduce方法实现
+  Array.prototype.myReduce = function(callbackFun) {
+    let returnSum = undefined // 叠加器最终变量
+    let index = 0 // 数组遍历的索引
+    const self = this // 获取当前数组
+    if(arguments.length &gt; 1) {
+      returnSum = arguments[1]
+    } else if(arguments.length === 1) {
+      returnSum = self[index]
+      index = 1
+    }
+    while(index &lt; self.length) {
+      let hasVal = self.hasOwnProperty(index)
+      if(hasVal) {
+        let currentVal = self[index]
+        returnSum = callbackFun(returnSum, currentVal, index)
+      }
+      index++ 
+    }
+    return returnSum
+  }
+  </code></pre></details> <h2 id="new-实现"><a href="#new-实现" class="header-anchor">#</a> New 实现</h2> <p>new 内部机制主要经历以下四个步骤：</p> <ol><li>创建一个新的对象。</li> <li>将构造函数的作用域赋给该对象。</li> <li>执行构造函数中的代码。</li> <li>返回该新的对象。</li></ol> <p>因此要实现一个 new 方法，那么必须抓住两点。</p> <ol><li>必须将新创建的对象的原型指针指向构造函数的原型对象。</li> <li>执行完构造函数中的代码后，必须判断其返回值是否为对象，若是则 return，若不是则直接返回刚刚新创建的对象。</li></ol> <details><summary>答案</summary> <pre><code>
+  // new实现
+  function myNew() {
+    const obj = new Object() // 创建一个新的对象
+    const argsFun = Array.prototype.shift.call(arguments) // 获取构造函数
+    obj.__proto__ = argsFun.prototype // 将新对象的原型指针指向构造函数的原型对象
+    const remainArgs = Array.prototype.slice.call(arguments, 0) // 获取剩余参数
+    const result = argsFun.apply(obj, remainArgs) // 执行构造函数中的代码
+    return typeof result === 'object' &amp;&amp; result !== null ? result : obj // 返回新的对象
+  }
+  </code></pre></details> <p>需要注意的是，new 是属于关键字，不能被重写，因此只能使用函数来模拟实现 new 的功能。</p> <p><strong>最重要的点，就是要将新建对象的原型指针__proto__指向参数函数的原型对象！！！</strong></p> <h2 id="async-await-实现"><a href="#async-await-实现" class="header-anchor">#</a> async/await 实现</h2> <p>async/await 是 generator 语法糖，基于 promise 进行编写的。由于 async/await 都是属于关键字，不能被重写，只能通过使用函数来模拟实现。</p> <p>要实现 async/await 函数，必须遵循下列几点要求。</p> <ol><li>async 函数只能面向 generator 生成器函数，并且最终会返回一个函数，函数执行后会返回一个 Promise 实例。</li> <li>执行 generator 生成器函数时，需<strong>使用递归形式进行自执行</strong>，直到最后的 done 为 true 为止才返回最终的结果。</li> <li>需要进行异常处理。</li></ol> <details><summary>答案</summary> <pre><code>
+  // async/await实现
+  function asyncFun(callbackFun) {
+    return function() {
+      const self = this
+      const args = arguments
+      return new Promise((resolve, reject) =&gt; {
+        const gen = callbackFun.apply(self, args)
+        function _next(value) { // 用于遍历迭代器
+          awaitFun(resolve, reject, gen, _next, _throw, 'next', value)
+        }
+        function _throw(err) { // 用于迭代器遍历时抛出异常
+          awaitFun(resolve, reject, gen, _next, _throw, 'throw', err)
+        }
+        _next() // 迭代器自执行
+      })
+    }
+  }
+  function awaitFun(res, rej, gen, nextFun, throwFun, funKey, args) {
+    const nextRes = gen[funKey](args)
+    if (nextRes.done) {
+      res(nextRes.value)
+    } else {
+      Promise.resolve(nextRes.value).then(nextFun, throwFun)
+    }
+  }
+  </code></pre></details> <h2 id="双向数据绑定的实现"><a href="#双向数据绑定的实现" class="header-anchor">#</a> 双向数据绑定的实现</h2> <p>在 JavaScript 为双向数据绑定的实现提供了两个 API，分别对应于 ES5 版本的<code>Object.defineProperty</code>和 ES6 版本<code>Proxy</code>。</p> <ol><li><p>Object.defineProperty版本</p> <details><summary>答案</summary> <pre><code>
+  // Object.defineProperty实现双向数据绑定
+  const data = {
+    text: ''
+  }
+  const inputEle = document.querySelector('input')
+  const spanEle = document.querySelector('span')
+  Object.defineProperty(data, 'text', {
+    set(val) {
+      spanEle.text = val
+    }
+  })
+  inputEle.addEventListener('input', function(e) {
+    data.text = this.value
+  })
+  </code></pre></details></li> <li><p>Proxy版本</p> <details><summary>答案</summary> <pre><code>
+  // Proxy实现双向数据绑定
+  const data = {
+    text: ''
+  }
+  const inputEle = document.querySelector('input')
+  const spanEle = document.querySelector('span')
+  const handler = {
+    set(target, key, value) {
+      target[key] = value
+      spanEle.text = value
+      return value
+    }
+  }
+  const proxyObj = new Proxy(data, handler)
+  inputEle.addEventListener('input', function(e) {
+    proxyObj.text = this.value
+  })
+  </code></pre></details></li></ol> <h2 id="object-create方法实现"><a href="#object-create方法实现" class="header-anchor">#</a> Object.create方法实现</h2> <p>实现 Object.create 方法，主要是利用寄生式继承。</p> <p>简单理解，就是<strong>先构建一个空构造函数，接着将参数对象赋给构造函数的原型对象，并将原型对象中 constructor 指回空构造函数，最后返回空构造函数实例</strong>。</p> <details><summary>答案</summary> <pre><code>
+  // Obejct.create方法实现
+  Object.prototype.myCreate = function(obj) {
+    function Noop() {}
+    Noop.prototype = obj
+    Noop.constructor = Noop
+    return new Noop()
+  }
+  </code></pre></details> <h2 id="instanceof-实现"><a href="#instanceof-实现" class="header-anchor">#</a> instanceof 实现</h2> <p>instanceof 的机制就是判断右边的构造函数的原型对象是否在左边对象的__proto__的原型链上。</p> <p>要实现 instanceof，那么需要注意的是，<strong>利用遍历一直寻找左边对象的__proto__，若等于右边构造函数的原型对象，则返回 true，否则直到遍历为 null 为止</strong>。</p> <details><summary>答案</summary> <pre><code>
+  // instanceof实现
+  function myInstanceof(left, right) {
+    let leftPro = left.__proto__
+    let rightPro = right.prototype
+    while(leftPro) {
+      if(leftPro === rightPro) return true
+      leftPro = leftPro.__proto__
+    }
+    return false
+  }
+  </code></pre></details> <h2 id="object-getownpropertynames方法实现"><a href="#object-getownpropertynames方法实现" class="header-anchor">#</a> Object.getOwnPropertyNames方法实现</h2> <p>Object.getOwnPropertyNames 用于获取一个对象的所有属性名，不包括原型对象上的。</p> <p>那么，要实现 Object.getOwnPropertyNames 方法，可<strong>结合使用 in 操作符和 Object.hasOwnProperty 实现</strong>。</p> <details><summary>答案</summary> <pre><code>
+  // Object.getOwnPropertyNams实现
+  Object.myGetOwnPropertyNames = function(obj) {
+    if(typeof obj !== 'object') throw new Error('This is not a object...')
+    const resultArr = []
+    for(let allKey in obj) {
+      if(Object.hasOwnProperty.call(obj, allKey)) {
+        resultArr.push(allKey)
+      }
+    }
+    return resultArr
+  }
+  </code></pre></details> <h2 id="promise-实现"><a href="#promise-实现" class="header-anchor">#</a> Promise 实现</h2> <p>Promise 拥有三种状态，分别是pending、fullfilled、rejected。</p> <p>而 Promise 的实现原理就是，<strong>通过队列形式控制每个成功回调以及失败回调的处理，内部使用私有变量保存当前处理状态以及处理所得到的值</strong>。接下来一一分析每个方法的实现要点。</p> <ol><li><p>静态resolve方法。</p> <p>返回一个Promise实例，先判断当前状态是否为pending，若不是直接返回。</p> <p>然后判断参数值是否为Promise实例，若是则必须调用then方法等待其调用完毕才能进行下一步。</p> <p>最后需要对成功回调队列和失败回调队列中进行清空处理（即使用shift方法，一一执行其回调函数）。</p> <p>上述操作必须在一个setTimeout中进行。</p></li> <li><p>静态reject方法。</p> <p>返回一个Promise实例，先判断当前状态是否为pending，若不是直接返回。</p> <p>无需判断为Promise实例，直接对失败回调队列进行清空处理（即使用shift方法，一一执行其回调函数）。</p> <p>上述操作必须在一个setTimeout中进行。</p></li> <li><p>then方法。</p> <p>返回一个Promise实例，先创建两个处理函数（分别为成功处理函数和失败处理函数）。</p> <p>成功处理函数中操作便是判断then方法的第一个参数是否为函数，若是则先执行其函数（其中内部值作为其函数的参数），接着再执行静态resolve方法清空成功回调队列操作。</p> <p>失败处理函数中操作便是判断then方法的第二个参数是否为函数，若是则先执行其函数（其中内部值作为其函数的参数），接着再执行静态reject方法清空失败回调队列操作。</p> <p>根据状态判断，当内部状态为pending时，则成功回调队列push进成功处理函数，失败回调队列push进失败处理函数，当内部状态为fullfilled时，则直接执行成功处理函数（其中内部值作为其函数的参数），当内部状态为rejected时，则直接执行失败回调处理函数（其中内部值作为其函数的参数）。</p></li> <li><p>catch方法。</p> <p>相当于直接执行this.then(undefined, rejectedFun)。</p></li> <li><p>finally方法。</p> <p>相当于直接执行this.then(val =&gt; MyPromise.resolve(callback()).then(() =&gt; val), val =&gt; MyPromise.reoslve(callback).then(() =&gt; { throw val }))</p></li> <li><p>静态all方法。</p> <p>返回一个Promise实例，创建一个空数组，遍历参数Promise数组，执行每一个Promise的then方法，然后将处理好的值push进空数组中，当判断数组长度与参数Promise数组长度一致时即可使用reoslve将处理好的数组返回。</p></li> <li><p>静态race方法。</p> <p>返回一个Promise实例，遍历参数Promise数组，执行每一个Promise的then方法，一旦有值返回即可直接resolve返回。</p></li></ol> <details><summary>答案</summary> <pre><code>
+  // Promise类实现
+  class MyPromise {
+    constructor(handleFun) {
+      handleFun(this._resolve, this._reject)
+      this._status = 'pending' // 当前的promise状态
+      this._value = undefined  // 当前promise处理的值
+      this._fullFilledQuene = [] // 当前promise接受处理队列
+      this._rejectedQuene = [] // 当前promise拒绝处理队列
+    }
+    _resolve(val) {
+      setTimeout(function() {
+        if(this._status !== 'pending') return
+        this._status = 'fullfilled'
+        const runFullfilledQuene = (res) =&gt; {
+          let callback
+          while(callback = this._fullFilledQuene.shift()) {
+            callback(res)
+          }
+        }
+        const runRejectedQuene = (err) =&gt; {
+          let callback
+          while(callback = this._rejectedQuene.shift()) {
+            callback(err)
+          }
+        }
+        if(val instanceof MyPromise) {
+          val.then(res =&gt; {
+            this._value = res
+            runFullfilledQuene(res)
+          }, err =&gt; {
+            runRejectedQuene(err)
+          })
+        } else {
+          this._value = val
+          runFullfilledQuene(val)
+        }
+      })
+    }
+    _reject(err) {
+      setTimeout(function() {
+        if(this._status !== 'pending') return
+        this._status = 'rejected'
+        this._value = err
+        let callback
+        while(callback = this._rejectedQuene.shift()) {
+          callback(err)
+        }
+      })
+    }
+    then(fullFilledFun, rejectedFun) {
+      return new MyPromise((resolve, reject) =&gt; {
+        // 封装一个promise回调成功的处理
+        const handleFullFilledFun = val =&gt; {
+          if(typeof fullFilledFun !== 'function') {
+            reject(val)
+          } else {
+            const value = fullFilledFun(val)
+            if(value instanceof MyPromise) {
+              value.then(res =&gt; {
+                resolve(res)
+              }, err =&gt; {
+                reject(err)
+              })
+            }
+          }
+        }
+        // 封装一个promise回调失败的处理
+        const handleRejectedFun = err =&gt; {
+          if(typeof rejectedFun !== 'function') {
+            reject(err)
+          } else {
+            const value = rejectedFun(err)
+            if(value instanceof MyPromise) {
+              value.then(res =&gt; {
+                resolve(res)
+              }, err =&gt; {
+                reject(err)
+              })
+            }
+          }
+        }
+        switch(this._status) {
+          case 'pending':
+            this._fullFilledQuene.push(handleFullFilledFun)
+            this._rejectedQuene.push(handleRejectedFun)
+            break
+          case 'fullfilled':
+            handleFullFilledFun(this._value)
+            break
+          case 'rejected':
+            handleRejectedFun(this._value)
+            break
+        }
+      })
+    }
+    catch(errFun) {
+      return this.then(undefined, errFun)
+    }
+    finally(callback) {
+      return this.then(
+        value =&gt; MyPromise.resolve(callback()).then(() =&gt; value),
+        err =&gt; MyPromise.resolve(callback()).then(() =&gt; err)
+      )
+    }
+    static resolve(val) {
+      if(val instanceof MyPromise) return val
+      return new MyPromise(resolve =&gt; resolve(val))
+    }
+    static reject(err) {
+      return new MyPromise((resovle, reject) =&gt; reject(err))
+    }
+    static all(list) {
+      return new MyPromise(resolve =&gt; {
+        let arrPromise = []
+        for(let [index, promiseItem] of list) {
+          promiseItem.then(res =&gt; {
+            arrPromise.push(res)
+            if(arrPromise.length === list.length) resolve(arrPromise)
+          })
+        }
+      })
+    }
+    static race(list) {
+      return new MyPromise(resolve =&gt; {
+        for(let [index, promiseItem] of list) {
+          promiseItem.then(res =&gt; {
+            resolve(res)
+          })
+        }
+      })
+    }
+  }
+  </code></pre></details> <h2 id="防抖-节流实现"><a href="#防抖-节流实现" class="header-anchor">#</a> 防抖/节流实现</h2> <p>防抖的原理是，<strong>通过闭包缓存定时器，当缓存的定时器不为空时，则使用clearTimeout进行清除，然后再重新赋值为一个setTimeout，频繁操作中直到最后一步操作才会真正起效，前面的操作都会被清除掉</strong>。</p> <details><summary>答案</summary> <pre><code>
+  // 防抖（频繁操作最终只会执行一次）
+  function debounce(fn, time) {
+    let timeout = undefined
+    return function() {
+      let context = this
+      let args = arguments
+      if(timeout) clearTimeout(timeout)
+      timeout = setTimeout(() =&gt; {
+        fn.apply(context, args)
+      }, time)
+    }
+  }
+  </code></pre></details> <p>节流的原理是，<strong>通过闭包缓存当前时间，当下一步重复操作的时间减去缓存时间大于参数时间时，那么就会直接执行函数，控制在规定的时间内执行函数</strong>。</p> <details><summary>答案</summary> <pre><code>
+  // 节流（频繁操作只会每隔一段时间操作一次）
+  function throttle(fn, time) {
+    let tempTime = Date.now()
+    return function() {
+      let currentTime = Date.now()
+      if(currentTime - tempTime &gt; time) {
+        fn.apply(this, arguments)
+        tempTime = currentTime
+      }
+    }
+  }
+  </code></pre></details> <h2 id="函数柯里化实现"><a href="#函数柯里化实现" class="header-anchor">#</a> 函数柯里化实现</h2> <p>函数柯里化的原理，就是<strong>将多个参数的单一函数转化为单一参数的多个函数</strong>。</p> <p>在实现函数柯里化中，<strong>通过使用递归形式</strong>来将多个单一参数转换为多个参数为止。</p> <p>如：sum(a, b, c, d) 相当于 sum(a)(b)(c)(d)，也相当于 sum(a, b)(c)(d)</p> <details><summary>答案</summary> <pre><code>
+  // 函数柯里化
+  function curry(fn) {
+    const judge = (...args) =&gt; 
+      args.length &gt;= fn.length
+        ? fn(...args)
+        : (...arg) =&gt; judge(...args, ...arg)
+    return judge
+  }
+  </code></pre></details></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/keep-Learning/datastructure/datastructure-learning-and-summary/前端中常见的算法题.html" class="prev">
+        前端中常见的算法题
+      </a></span> <span class="next"><a href="/keep-Learning/datastructure/datastructure-learning-and-summary/Stack.html">
+        瞧瞧栈
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/keep-Learning/assets/js/app.90ccec97.js" defer></script><script src="/keep-Learning/assets/js/2.71580b53.js" defer></script><script src="/keep-Learning/assets/js/25.08ee3872.js" defer></script>
+  </body>
+</html>

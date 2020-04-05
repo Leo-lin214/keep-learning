@@ -12,10 +12,11 @@ const getTypescriptRoutes = require('./../ts/routes')
 const getWeexRoutes = require('./../weex/routes')
 
 module.exports = {
-  base: '/keep-Learning/',
-  title: 'Learing And Sharing',
+  base: '/',
+  // title: 'Learing And Sharing',
   description: '好好学习，天天向上💪',
   themeConfig: {
+    logo: '/icon.png',
     nav: [
       { text: '主页', link: '/' },
       {
